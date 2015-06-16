@@ -1,0 +1,178 @@
+/***************************
+FONT HARRY
+***************************/
+
+@font-face {
+font-family: 'Harry P';
+src: url('../HARRYP__.TTF');
+}
+
+html {
+  background: url('../images/catlight3.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+body{
+  text-align:center;
+  padding-top:50px;
+  background:none;
+  color:#FFF;
+  }
+
+h1{
+  font-family: 'Harry P', 'Droid Sans', sans-serif;
+  font-size: 7em;
+  letter-spacing: 10px;
+    text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,
+                  0 3px 0 #bbb,
+                  0 4px 0 #b9b9b9,
+                  0 5px 0 #aaa,
+                  0 6px 1px rgba(255,255,255,.1),
+                  0 0 5px rgba(255,255,255,.1),
+                  0 1px 3px rgba(255,255,255,.3),
+                  0 3px 5px rgba(255,255,255,.2),
+                  0 5px 10px rgba(255,255,255,.25),
+                  0 10px 10px rgba(255,255,255,.2),
+                  0 20px 20px rgba(255,255,255,.15);
+  color: #E8E500;
+  margin: 0;
+  line-height: 1.1;
+}
+
+p{
+  font-size: 1.5rem;
+}
+
+.tagline {
+letter-spacing: 1px;
+font-size: 2.5em;
+/*margin-top: -2.8em;
+margin-bottom: 0;
+/* text-transform: uppercase; */
+text-shadow: -1px -1px 0 #000,
+ 1px -1px 0 #000,
+ -1px 1px 0 #000,
+ 1px 1px 0 #000;
+ color: #FFDF00
+}
+
+h2{
+  color:#FFF;
+}
+
+h3{
+  color:#FFF;
+}
+
+footer{
+  background-color: #000;
+}
+
+footer>p{
+  margin-bottom: 0;
+}
+
+.top-bar{
+  top:0;
+  position:fixed;
+  text-align:center;
+  right: 0;
+  left: 0;
+  background-color: #000;
+  z-index:10;
+  height:50px;
+  }
+
+
+.main{
+  background-color: rgba(0,0,0, 0.8);
+  min-height: 610px;
+  border-radius: 15px;
+border-color: yellow;
+border-style: solid;
+border-width: thin;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.bannerSaruTobi{
+  width:90%;
+  padding: 5px 5px 5px 5px;
+}
+
+.top-banner{
+   margin-top:1%;
+}
+
+.submitButton{
+  margin-top: 1%;
+  margin: 20px;
+}
+
+.row{
+  max-width: 75rem;
+}
+
+.adsMargin{
+  margin-top:2px;
+}
+
+.left{
+  text-align:left;
+}
+
+.door{
+  width:250px;
+  max-width:33%;
+}
+
+.circle{
+  background-color: #279f95;
+  padding: 2px;
+  width: 80px;
+  height: 80px;
+  color: #fff;
+  font-size: 50px;
+  border-radius: 60px;
+  margin: 0 auto;
+}
+
+.box{
+  background-color: yellow;
+  border: none;
+  border-radius: 5px;
+}
+
+/* TOP MARGIN FOR NUMBER 2 IN THE MAIN INDEX */
+.two-margin{
+  margin-top: 100px;
+}
+
+.toplink{
+  color: #E7DB5F;
+}
+
+/* Table style */
+
+tr:nth-child(odd) {background: #BBB9B9;}
+tr:nth-child(even) {background: #BBB9B9;}
+
+thead{
+  border-bottom: black;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+}
+th{
+  background:#FFF;
+}
+
+.claim{
+  font-size: 10pt;
+  padding:0;
+}
+
+.textoRef>p{
+  font-size: 14px;
+}

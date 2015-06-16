@@ -1,0 +1,15 @@
+@media screen and (max-width: 500px) { /* For iPhones */
+
+ .column-left{
+  width:0%;
+ }
+
+ .column-right{
+  width:0%;
+ }
+
+ .column-center{
+   width:100%;
+ }
+
+}
