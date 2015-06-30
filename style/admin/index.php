@@ -14,7 +14,6 @@ try {
 if(isset($_POST["action"])){
   if($_POST["action"]=='logout'){
     unset($_SESSION['admin']);
-    unset($_COOKIE['admin']);
   }
 }
 
@@ -24,12 +23,6 @@ if(isset($_POST["password"])){
   $res = $sql->query($query)->fetch();
   if($res){
     $_SESSION['admin']=true;
-    if(isset($_POST["remember"])&&$_POST["remember"]=="on"){
-      setcookie("admin");
-    }
-    else{
-      unset($_COOKIE['admin']);
-    }
   }
   else{
     $view["admin_message_html"]='<div class="alert alert-danger" role="alert">
@@ -37,10 +30,6 @@ if(isset($_POST["password"])){
     Enter a valid email address
     </div>';
   }
-}
-
-if(isset($_COOKIE['remember'])){
-  $_SESSION['admin']=true;
 }
 
 //check if user is logged in, if not take to login page
@@ -65,7 +54,6 @@ else{
         $updatePassword =  update_password_query();
         $q = $sql->prepare($updatePassword);
         $q->execute(array($_POST["new_password"]));
-        unset($_COOKIE['admin']);
         unset($_SESSION['admin']);
         $view["admin_message_html"]='<div class="alert alert-success" role="alert">Password changed successfully.</div>';
         require 'template/login.php';
