@@ -47,9 +47,14 @@ if(isset($_POST["title"])){
   //update new settings values
   if($_SESSION['admin']){
     $settings = $_POST;
-    $insertQuery =  update_settings_query($settings);
-    $resultSettings = $sql->query($insertQuery);
-    $resultSettings->closeCursor();
+    foreach ($settings as $key => $value) {
+      if($key!="password"||$key!="xapo_app_id"||$key!="xapo_secret_key"){
+          $query = "update settings set value= ? where name=?;";
+          $q = $sql->prepare($query);
+          $q->execute(array($value,$key));
+          $q->closeCursor();
+        }
+      }
     //Clear settings array, will be reloaded later
     $settings = Array();
     $view["admin_message_html"]='<div class="alert alert-success" role="alert">Changes made successfully.</div>';

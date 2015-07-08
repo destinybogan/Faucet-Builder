@@ -7,23 +7,6 @@ function hide_key($decriptedKey){
   return $exes.$lastFour;
 }
 
-
-function update_settings_query($settings){
-  $sql = "";
-  try{
-    foreach ($settings as $key => $value) {
-      if($key!="password"||$key!="xapo_app_id"||$key!="xapo_secret_key"){
-        $sql .= "update settings set value='$value' where name='$key';";
-        }
-      }
-      return $sql;
-    }
-    catch(Exception $e){
-
-    }
-}
-
-
 function update_password_query(){
   return "update settings set value=? where name='password'";
 }

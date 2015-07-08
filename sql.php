@@ -10,13 +10,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `data` (
-`id` int(11) NOT NULL,
+`id` int(11) NOT NULL AUTO_INCREMENT,
   `user` text NOT NULL,
   `amount` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `result` tinyint(1) DEFAULT NULL,
-  `message` text
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+  `message` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -25,14 +26,15 @@ CREATE TABLE IF NOT EXISTS `data` (
 --
 
 CREATE TABLE IF NOT EXISTS `data_referals` (
-`id` int(11) NOT NULL,
+`id` int(11) NOT NULL AUTO_INCREMENT,
   `user` text NOT NULL,
   `referrer` text NOT NULL,
   `amount` int(11) NOT NULL,
   `date` date NOT NULL,
   `result` tinyint(1) NOT NULL,
-  `message` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `message` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -41,8 +43,9 @@ CREATE TABLE IF NOT EXISTS `data_referals` (
 --
 
 CREATE TABLE IF NOT EXISTS `referals` (
-  `username` text NOT NULL,
-  `reffered_by` text
+  `username` varchar(50) NOT NULL,
+  `reffered_by` text,
+  PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -52,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `referals` (
 --
 
 CREATE TABLE IF NOT EXISTS `settings` (
-  `name` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL UNIQUE KEY,
   `value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -65,51 +68,11 @@ CREATE TABLE IF NOT EXISTS `settings` (
 CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(50) NOT NULL,
   `ip` text NOT NULL,
-  `claimed_at` int(11) NOT NULL
+  `claimed_at` int(11) NOT NULL,
+  PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `data`
---
-ALTER TABLE `data`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `data_referals`
---
-ALTER TABLE `data_referals`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `settings`
---
-ALTER TABLE `settings`
- ADD UNIQUE KEY `name` (`name`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
- ADD PRIMARY KEY (`username`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `data`
---
-ALTER TABLE `data`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
---
--- AUTO_INCREMENT for table `data_referals`
---
-ALTER TABLE `data_referals`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
